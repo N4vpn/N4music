@@ -153,7 +153,7 @@ Title: {ctitle}
                 await app.send_photo(chat_id,
                 photo=thumb,
                 reply_markup=InlineKeyboardMarkup(buttons),    
-                caption=(f"🗂 **Name:** [{title[:80]}]({url})\n⏱ **Duration:** `{duration}`\n🧸 **Request by:** {semx.mention}/n🧒 **develope by:** {semx.mention}")
+                caption=(f"🗂 **Name:** [{title[:80]}]({url})\n⏱ **Duration:** `{duration}`\n🧸 **Request by:** {semx.mention}")
             )   
                 os.remove(thumb)
             else:      
