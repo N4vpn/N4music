@@ -1,5 +1,5 @@
 {
-    "name": "N4 Music Bot",
+    "name": "N4 music V1",
     "logo": "https://telegra.ph/file/d7a1849c6008f99e1b66c.jpg",
     "description": "Telegram Bot for streaming music trough the Telegram Group video chat feature.",
     "keywords": ["music", "py-tgcalls", "pyrogram", "telegram"],
