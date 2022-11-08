@@ -26,8 +26,8 @@ def start_pannel():
                 InlineKeyboardButton(text="📚 Commands", url="https://telegra.ph/%C9%AA%E1%B4%8D-%C9%B4%E1%B4%8F%E1%B4%9B-%E1%B4%8B%E1%B4%87%CA%9F%E1%B4%A0%C9%AA%C9%B4-04-13")
             ],
             [ 
-                InlineKeyboardButton(text="📣 Channel", url="https://t.me/beginner_2015"),
-                InlineKeyboardButton(text="💭 Group", url="https://t.me/n4musicsupport")
+                InlineKeyboardButton(text="📣 Channel", url="https://t.me/n4vpn"),
+                InlineKeyboardButton(text="💭 Group", url="https://t.me/+G1g4SVQNr34zNGFl")
             ],
     ]
     return "✨ This is N4 Music, a bot that can play music trough the Telegram Group video chat feature.", buttons
@@ -45,9 +45,9 @@ pstart_markup = InlineKeyboardMarkup(
                         "❓ Setup Guide", url="https://telegra.ph/%C9%AA%E1%B4%8D-%C9%B4%E1%B4%8F%E1%B4%9B-%E1%B4%8B%E1%B4%87%CA%9F%E1%B4%A0%C9%AA%C9%B4-04-13-2")
                 ],[
                     InlineKeyboardButton(
-                        "👥 Official Group", url="https://t.me/n4musicsupport"), 
+                        "👥 Official Group", url="https://t.me/+G1g4SVQNr34zNGFl"), 
                     InlineKeyboardButton(
-                        "📎 Official Channel", url="https://t.me/beginner_2015")
+                        "📎 Official Channel", url="https://t.me/n4vpn")
                 ],
             ]
         )
