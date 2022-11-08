@@ -37,7 +37,7 @@ pstart_markup = InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "➕ Add me to your Group ➕", url="https://t.me/n4musicbot?startgroup=true")
+                        "➕ Add me to your Group ➕", url="https://t.me/N4musicV1Bot?startgroup=true")
                 ],[
                     InlineKeyboardButton(
                         "📚 Commands", url="https://telegra.ph/%C9%AA%E1%B4%8D-%C9%B4%E1%B4%8F%E1%B4%9B-%E1%B4%8B%E1%B4%87%CA%9F%E1%B4%A0%C9%AA%C9%B4-04-13"),
@@ -94,7 +94,7 @@ async def play(_, message: Message):
         user_name = message.from_user.first_name
         rpk = "["+user_name+"](tg://user?id="+str(user_id)+")" 
         await app.send_message(message.chat.id,
-            text=f"Hi {rpk} 👋🏻\n\nℹ️ [N4 Music](https://t.me/n4musicbot) **Can** play music on your **Groups** through the **Telegram Group video chat** feature !\n\n💭 **Check out** all the **Bot commands** and how they work by clicking on the » 📕 **Commands** button !",
+            text=f"Hi {rpk} 👋🏻\n\nℹ️ [N4 Music](https://t.me/N4musicV1Bot) **Can** play music on your **Groups** through the **Telegram Group video chat** feature !\n\n💭 **Check out** all the **Bot commands** and how they work by clicking on the » 📕 **Commands** button !",
             parse_mode="markdown",
             reply_markup=pstart_markup,
             reply_to_message_id=message.message_id,
