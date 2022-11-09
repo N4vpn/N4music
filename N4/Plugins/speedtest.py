@@ -7,6 +7,7 @@ from N4 import app, SUDOERS
 from N4.N4Utilities.database.onoff import is_on_off
 from pyrogram import filters, Client
 from pyrogram.types import Message
+from strings import get_command
 
 # Commands
 SPEEDTEST_COMMAND = get_command("SPEEDTEST_COMMAND")
