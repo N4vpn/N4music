@@ -8,6 +8,9 @@ from N4.N4Utilities.database.onoff import is_on_off
 from pyrogram import filters, Client
 from pyrogram.types import Message
 
+# Commands
+SPEEDTEST_COMMAND = get_command("SPEEDTEST_COMMAND")
+
 def testspeed(m):
     try:
         test = speedtest.Speedtest()
