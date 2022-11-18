@@ -26,28 +26,42 @@ def testspeed(m):
     except Exception as e:
         return m.edit(e)
     return result
+@Client.on_message(command(["speedtest", f"speedtest@{bname}"]) & ~filters.edited)
+@sudo_users_only
+async def run_speedtest(_, message: Message):
+    m = await message.reply_text("⚡️ running server speedtest")
+    try:
+        test = speedtest.Speedtest()
+        test.get_best_server()
+        m = await m.edit("⚡️ running download speedtest..")
+        test.download()
+        m = await m.edit("⚡️ running upload speedtest...")
+        test.upload()
+        test.results.share()
+        result = test.results.dict()
+    except Exception as e:
+        await m.edit(e)
+        return
+    m = await m.edit("🔄 sharing speedtest results")
+    path = wget.download(result["share"])
 
-
-@app.on_message(filters.command(SPEEDTEST_COMMAND) & SUDOERS)
-async def speedtest_function(client, message):
-    m = await message.reply_text("Running Speed test")
-    loop = asyncio.get_event_loop()
-    result = await loop.run_in_executor(None, testspeed, m)
-    output = f"""**Speedtest Results**
+    output = f"""💡 SpeedTest Results
     
-<u>**Client:**</u>
-**__ISP:__** {result['client']['isp']}
-**__Country:__** {result['client']['country']}
+<u>Client:</u>
+ISP: {result['client']['isp']}
+Country: {result['client']['country']}
   
-<u>**Server:**</u>
-**__Name:__** {result['server']['name']}
-**__Country:__** {result['server']['country']}, {result['server']['cc']}
-**__Sponsor:__** {result['server']['sponsor']}
-**__Latency:__** {result['server']['latency']}  
-**__Ping:__** {result['ping']}"""
+<u>Server:</u>
+Name: {result['server']['name']}
+Country: {result['server']['country']}, {result['server']['cc']}
+Sponsor: {result['server']['sponsor']}
+Latency: {result['server']['latency']}
+
+⚡️ Ping: {result['ping']}"""
     msg = await app.send_photo(
-        chat_id=message.chat.id, 
-        photo=result["share"], 
-        caption=output
+        chat_id=message.chat.id, photo=path, caption=output
     )
+    os.remove(path)
     await m.delete()
+
+
